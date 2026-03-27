@@ -15,6 +15,7 @@ cheat.player.speed = 810; //emp무한+no쿨타임
 cheat.enemies.forEach(e => e.stun = 9999); //모든 적 스턴
 
 [AI] 우주 정거장 디펜스 치트
+얘는 테스트 중임. 오류 발생 가능성 99%라서 ㅈㅅㅈㅅ
 862번 줄에 중단점 걸고
 window.cheat = { money: () => { state.credits += 99999; refreshHUD(); }, god: () => { state.integrity = 100; refreshHUD(); }, kill: () => { state.enemies.forEach(e => e.hp = 0); }, boost: () => { Object.values(TURRET_TYPES).forEach(t => { t.range = 500; t.damage = 1000; t.cooldown = 0.05; }); }, win: () => { state.integrity = 100; state.score += 100000; handleVictory(); } }; console.log("✅ 치트 준비 완료!");
 
