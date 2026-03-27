@@ -1,0 +1,35 @@
+피라미드 치트
+531번 줄에 중단점 걸고
+state.prince.power = 999999999999; //전투력 거의 무한
+state.elapsed = 999999999999999999; //버튼 시간 늘리기
+
+[AI] Waste Sector 치트
+816번 줄에 중단점 걸고
+window.cheat = state;
+하면
+아래 명령어들로 조작 가능
+cheat.player.invul = 999999; //무적
+cheat.player.scrap = 999998; //이거 하고 스크랩 하나라도 먹으면 탈출 가능해짐
+cheat.player.speed = 810; //이동 속도 3배
+cheat.player.speed = 810; //emp무한+no쿨타임
+cheat.enemies.forEach(e => e.stun = 9999); //모든 적 스턴
+
+[AI] 우주 정거장 디펜스 치트
+862번 줄에 중단점 걸고
+window.cheat = { money: () => { state.credits += 99999; refreshHUD(); }, god: () => { state.integrity = 100; refreshHUD(); }, kill: () => { state.enemies.forEach(e => e.hp = 0); }, boost: () => { Object.values(TURRET_TYPES).forEach(t => { t.range = 500; t.damage = 1000; t.cooldown = 0.05; }); }, win: () => { state.integrity = 100; state.score += 100000; handleVictory(); } }; console.log("✅ 치트 준비 완료!");
+
+아래 명령어들로 조작 가능
+cheat.money() //스크랩(자원) +99,999 추가
+cheat.god() //코어 체력(Integrity) 100으로 풀 회복
+cheat.kill() //화면에 있는 모든 적 즉시 처치
+cheat.boost() //모든 포탑을 사거리 무한 + 데미지 최강 + 초고속 연사로 변경
+cheat.win()" //즉시 승리 화면으로 이동
+
+모든 중단점은 game.js에서 해야함
+모든 치트는 콘솔에서 해야함
+추후 막힐 수 있음
+--정보--
+build 20260327
+V1.0
+by. jwonpark
+p. w. 안고쳐서 걍 배포했습니다.
